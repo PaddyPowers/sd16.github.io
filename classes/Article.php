@@ -29,6 +29,11 @@ class Article
   public $content = null;
 
   /**
+  * @var string selecting course
+  */
+  public $course = null;
+
+  /**
   * @var string The filename extension of the article's full-size and thumbnail images (empty string means the article has no image)
   */
   public $imageExtension = "";
@@ -43,8 +48,9 @@ class Article
   public function __construct( $data=array() ) {
     if ( isset( $data['id'] ) ) $this->id = (int) $data['id'];
     if ( isset( $data['publicationDate'] ) ) $this->publicationDate = (int) $data['publicationDate'];
-    if ( isset( $data['name'] ) ) $this->name = preg_replace ( "/[^\.\,\-\_\'\"\@\?\!\:\$ a-zA-Z0-9()]/", "", $data['title'] );
+    if ( isset( $data['name'] ) ) $this->name = preg_replace ( "/[^\.\,\-\_\'\"\@\?\!\:\$ a-zA-Z0-9()]/", "", $data['name'] );
     if ( isset( $data['content'] ) ) $this->content = $data['content'];
+	if ( isset( $data['course'] ) ) $this->course = $data['course'];
     if ( isset( $data['imageExtension'] ) ) $this->imageExtension = preg_replace ( "/[^\.\,\-\_\'\"\@\?\!\$ a-zA-Z0-9()]/", "", $data['imageExtension'] );
   }
 

@@ -14,25 +14,17 @@
                     </div>
                     <ul class="recentUpdatesList">
                         <?php foreach ( $results[ 'articles'] as $article ) { ?>
-                        <li class="recentUpdatesItem">
-                            <div class="box-holder">
-                                <div class="box-delete">
-
+                        <li class="recentUpdatesItem" onclick="location='admin.php?action=editArticle&amp;articleId=<?php echo $article->id?>'">
+                            <div class="liquid-row">
+                                <div class="liquid-mobile6" style="margin-bottom:0;">
+                                    <h1><?php echo $article->name?></h1>
                                 </div>
-                                <div class="box-undo">
-
+                                <div class="liquid-mobile6" style="margin-bottom:0;">
+                                    <div class="date">
+                                        <h1><?php echo $article->course?></h1>
+									</div>
                                 </div>
-                                <div class="box" newaddress="?action=editArticle&amp;articleId=<?php echo $article->id?>">
-                                    <div class="liquid-row">
-                                        <div class="liquid-mobile6" style="margin-bottom:0;">
-                                            <h1><?php echo $article->title?></h1>
-                                        </div>
-                                        <div class="liquid-mobile6" style="margin-bottom:0;">
-                                            <div class="date">
-                                                <?php echo date( 'j M Y', $article->publicationDate)?></div>
-                                        </div>
-                                    </div>
-                                </div>
+							</div>
                         </li>
                         <?php } ?>
                     </ul>

@@ -16,7 +16,7 @@
 
   <div class="container">
 
-  <?php include "templates/include/adminNavigation.php" ?>
+  <?php include "templates/admin/include/adminNavigation.php" ?>
     
 
     <div class="playground">
@@ -37,7 +37,19 @@
           <div class="card">
             <h1>Attributes</h1>
             <input type="date"  class="textBox" name="publicationDate" id="publicationDate" placeholder="YYYY-MM-DD" required maxlength="10" value="<?php echo $results['article']->publicationDate ? date( "Y-m-d", $results['article']->publicationDate ) : "" ?>" />
-          </div>
+			<select name="summary" id="summary" >
+              <option> 
+              <?php if( htmlspecialchars( $results['article']->course === NULL)){
+                echo "Choose a course";
+                }
+                else{
+                  echo htmlspecialchars( $results['article']->course );
+                }            
+              ?>
+              <option value="Interaction Design">Interaction Design</option>
+              <option value="Product Design">Product Design</option>
+            </select>
+		  </div>
 
           <div class="card">
             <h1>Feature Image</h1>
