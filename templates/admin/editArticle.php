@@ -57,22 +57,13 @@
 		  </div>
 
           <div class="card">
-            <h1>Feature Image</h1>
+            <h1>Profile Image</h1>
             <div class="liquid-row" id="articleImageContainer">
               <?php if ( $results['article'] && $imagePath = $results['article']->getImagePath() ) { ?>
               <div class="liquid-row" >
                 <img id="articleImage" class="textBox" src="<?php echo $imagePath ?>" alt="Article Image" />
               </div> 
-              <div class="liquid-row">
-                <label class="click textCenter button" for="deleteImage">
-                  <input type="checkbox" name="deleteImage" id="deleteImage" value="yes" style="visibility: hidden;" onclick="return confirm('Delete This Image?')" / > Delete
-                </label>
-              </div>
               <?php } ?>
-              <div class="fileUpload btn">
-                <span>Upload</span>
-                <input type="file" class="upload" name="image" id="image" placeholder="Choose an image to upload" maxlength="255"/>
-              </div>
             </div>
           </div>
           <div class="card">
@@ -110,10 +101,10 @@
             $("#articleImageContainer").prepend('   <div class="liquid-row" > \
             <img id="articleImage" class="textBox" src="<?php echo $imagePath ?>" alt="Article Image" /> \
           </div> \
-          <!--<div class="liquid-row"> \
+          <div class="liquid-row"> \
             <label class="click textCenter button" for="deleteImage"> \
             <input type="checkbox" name="deleteImage" id="deleteImage" value="yes" / > Delete \
-          </div>--> \
+          </div>		 \
             </label>');
 
         }
