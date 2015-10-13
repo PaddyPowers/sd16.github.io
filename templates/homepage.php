@@ -42,23 +42,23 @@
 	<!-- Header -->
 	<div class="header">
 		<a class="logo" href="http://sd16.co.uk">
-			<img src="img/logo.svg" alt="">
+			<img src="images/logo.svg" alt="">
 		</a>
 		<a class="logo-narrow" href="">
-			<img src="img/logo-narrow.svg" alt="">
+			<img src="images/logo-narrow.svg" alt="">
 		</a>
 		<div class="social-icons clearfix">
 			<a href="https://twitter.com/SclDgtl">
-				<img src="img/icon-twitter.svg" alt="">
+				<img src="images/icon-twitter.svg" alt="">
 			</a>
 			<a href="https://instagram.com/socialdigital2016/">
-				<img src="img/icon-instagram.svg" alt="">
+				<img src="images/icon-instagram.svg" alt="">
 			</a>
 			<a href="https://www.facebook.com/scldgtl">
-				<img src="img/icon-facebook.svg" alt="">
+				<img src="images/icon-facebook.svg" alt="">
 			</a>
 			<a href="https://www.youtube.com/channel/UCkLyEiQ1UxmJRzb0WrYxMoA/videos">
-				<img src="img/icon-youtube.svg" alt="">
+				<img src="images/icon-youtube.svg" alt="">
 			</a>
 		</div>
 
