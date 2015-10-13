@@ -21,17 +21,17 @@ class Article
   /**
   * @var string Full Name of the article
   */
-  public $name = null;
+  public $fullName = null;
+
+  /**
+  * @var string Full Name of the article
+  */
+  public $course = null;
 
   /**
   * @var string The HTML content of the article
   */
   public $content = null;
-
-  /**
-  * @var string selecting course
-  */
-  public $course = null;
 
   /**
   * @var string The filename extension of the article's full-size and thumbnail images (empty string means the article has no image)
@@ -48,9 +48,9 @@ class Article
   public function __construct( $data=array() ) {
     if ( isset( $data['id'] ) ) $this->id = (int) $data['id'];
     if ( isset( $data['publicationDate'] ) ) $this->publicationDate = (int) $data['publicationDate'];
-    if ( isset( $data['name'] ) ) $this->name = preg_replace ( "/[^\.\,\-\_\'\"\@\?\!\:\$ a-zA-Z0-9()]/", "", $data['name'] );
+    if ( isset( $data['fullName'] ) ) $this->fullName = preg_replace ( "/[^\.\,\-\_\'\"\@\?\!\:\$ a-zA-Z0-9()]/", "", $data['fullName'] );
+    if ( isset( $data['course'] ) ) $this->course = preg_replace ( "/[^\.\,\-\_\'\"\@\?\!\:\$ a-zA-Z0-9()]/", "", $data['course'] );
     if ( isset( $data['content'] ) ) $this->content = $data['content'];
-	if ( isset( $data['course'] ) ) $this->course = $data['course'];
     if ( isset( $data['imageExtension'] ) ) $this->imageExtension = preg_replace ( "/[^\.\,\-\_\'\"\@\?\!\$ a-zA-Z0-9()]/", "", $data['imageExtension'] );
   }
 
@@ -246,11 +246,11 @@ class Article
 
     // Insert the Article
     $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-    $sql = "INSERT INTO articles ( publicationDate, title, summary, content, imageExtension ) VALUES ( FROM_UNIXTIME(:publicationDate), :title, :summary, :content, :imageExtension )";
+    $sql = "INSERT INTO articles ( publicationDate, fullName, course, content, imageExtension ) VALUES ( FROM_UNIXTIME(:publicationDate), :fullName, :course, :content, :imageExtension )";
     $st = $conn->prepare ( $sql );
     $st->bindValue( ":publicationDate", $this->publicationDate, PDO::PARAM_INT );
-    $st->bindValue( ":title", $this->title, PDO::PARAM_STR );
-    $st->bindValue( ":summary", $this->summary, PDO::PARAM_STR );
+    $st->bindValue( ":fullName", $this->fullName, PDO::PARAM_STR );
+    $st->bindValue( ":course", $this->course, PDO::PARAM_STR );
     $st->bindValue( ":content", $this->content, PDO::PARAM_STR );
     $st->bindValue( ":imageExtension", $this->imageExtension, PDO::PARAM_STR );
     $st->execute();
@@ -270,11 +270,11 @@ class Article
    
     // Update the Article
     $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-    $sql = "UPDATE articles SET publicationDate=FROM_UNIXTIME(:publicationDate), title=:title, summary=:summary, content=:content, imageExtension=:imageExtension WHERE id = :id";
+    $sql = "UPDATE articles SET publicationDate=FROM_UNIXTIME(:publicationDate), fullName=:fullName, course=:course, content=:content, imageExtension=:imageExtension WHERE id = :id";
     $st = $conn->prepare ( $sql );
     $st->bindValue( ":publicationDate", $this->publicationDate, PDO::PARAM_INT );
-    $st->bindValue( ":title", $this->title, PDO::PARAM_STR );
-    $st->bindValue( ":summary", $this->summary, PDO::PARAM_STR );
+    $st->bindValue( ":fullName", $this->fullName, PDO::PARAM_STR );
+    $st->bindValue( ":course", $this->course, PDO::PARAM_STR );
     $st->bindValue( ":content", $this->content, PDO::PARAM_STR );
     $st->bindValue( ":imageExtension", $this->imageExtension, PDO::PARAM_STR );
     $st->bindValue( ":id", $this->id, PDO::PARAM_INT );
