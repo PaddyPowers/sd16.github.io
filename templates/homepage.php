@@ -30,11 +30,6 @@
 	<link rel="icon" type="image/png" href="img/favicon.png" />
 	<link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon.png" />
 
-	<!-- html5shiv -->
-	<!--[if lt IE 9]>
-		<script type="text/javascript" src="js/html5shiv.js"></script>
-	<![endif]-->
-		<script src="js/ckeditor/ckeditor.js"></script>
 </head>
 
 <body>
