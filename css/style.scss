@@ -1,175 +1,140 @@
 // Imports
+
 @import "reset";
 @import "fonts";
 @import "functions";
 @import "better-underline";
 
 // Typography
-p,
-a,
-strong {
-  font: 18px 'Roboto', sans-serif;
-  font-weight: 300;
-  &::selection {
-    background-color: black;
-    color: white;
-    text-shadow: none;
-  }
+p,a,strong {
+	font: 18px 'Roboto', sans-serif;
+	font-weight: 300;
+	&::selection {
+		background-color: black;
+		color: white;
+		text-shadow: none;
+	}
 }
 strong {
-  font-weight: 500;
+	font-weight: 500;
 }
-a,
-a:visited {
-  color: #000;
-  font-weight: 400;
+a, a:visited {
+	color: #000;
+	font-weight: 400;
 }
 a.no-underline {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 // Styles
+
 body {
-  padding: 0 30px;
+	padding: 0 30px;
 }
 
 // Header
+
 .header {
-  padding: 70px 0 40px;
-  margin: 0 auto;
-  max-width: 1000px;
-  p {
-    max-width: 700px;
-    margin-bottom: 10px;
-  }
-  p,
-  a,
-  strong {
-    font-size: 21px;
-    line-height: 29px;
-  }
-  p a {
-    @include better-underline(black);
-  }
+	padding: 70px 0 40px 0;
+	margin: 0 auto;
+	max-width: 1000px;
+	p {
+		max-width: 700px;
+		margin-bottom: 10px;
+	}
+	p, a, strong {
+		font-size: 21px;
+		line-height: 29px;
+	}
+	p a {
+		@include better-underline(black);
+	}
 }
-.logo,
-.logo-narrow {
-  display: block;
-  max-width: 700px;
-  margin-bottom: 20px;
-  img {
-    display: block;
-  }
+.logo, .logo-narrow {
+	display: block;
+	max-width: 700px;
+	margin-bottom: 20px;
+	img {
+		display: block;
+	}
 }
 .logo-narrow {
-  display: none;
+	display: none;
 }
 .social-icons {
-  margin-bottom: 20px;
-	a {
-		display: block;
-		float: left;
-	}
-	a:hover {
-		opacity: 0.7;
-	}
+	margin-bottom: 20px;
 }
 .select-course {
-  margin: 20px auto 0;
-  a {
-    padding: 10px 15px;
-    float: left;
-    display: inline-block;
-    background: #000;
-    color: #fff;
-    font-size: 22px;
-  }
-  a + a {
-    float: right;
-  }
+	margin: 20px auto 0 auto;
+	a {
+		padding: 10px 15px;
+		float: left;
+		display: inline-block;
+		background: #000;
+		color: #FFF;
+		font-size: 22px;
+	}
+	a + a {
+		float: right;
+	}
 }
 
 // Students
+
 .students {
-  max-width: 1000px;
-  padding-bottom: 40px;
-  margin: 0 auto;
-  .gutter-sizer {
-    width: 3%;
-  }
-  .student {
-    width: 22.75%;
-    border: 1px dashed #000;
-    position: relative;
-		overflow: hidden;
-    > a img {
-    }
-    > a {
-			&:hover img {
-				filter: brightness(110%);
-			}
-			&:hover + .description a.web {
-				&::after {
-          opacity: 1;
-          right: 42px;
-          transition: all 0.2s ease-in-out;
-        }
-        padding-right: 52px;
-        transition: all 0.3s ease-in-out;
-			}
-			img {
-		    display: block;
-				transition: all 0.2s ease-in-out;
-		  }
+	max-width: 1000px;
+	margin: 0 auto;
+	.gutter-sizer {
+		width: 3%;
+	}
+	.student {
+		width: 22.75%;
+		// box-shadow: 0px 10px 10px rgba(0,0,0,0.15);
+		border: 1px dashed #000;
+		> a img {
+			display: block;
 		}
-    .description {
-      h2 {
-        font: 400 24px 'Roboto', sans-serif;
-        margin: 5px 0;
-      }
-      padding: 10px 15px 15px;
-      background: #fff;
-    }
-    .web a {
-      position: relative;
-      display: inline-block;
-      padding: 10px 15px;
-      margin: 15px 0 5px;
-      border: 1px dashed #000;
-      text-align: center;
-      text-transform: uppercase;
-      color: #000;
-      transition: all 0.2s ease-in-out;
-      &:hover {
-        letter-spacing: 5px;
-        color: #FFF;
-        background: #000;
-        border-color: #FFF;
-        transition: all 0.3s ease-in-out;
-      }
-    }
-    a.twitter, a.linkedin {
-      display: inline-block;
-      padding: 11px 15px 8px 15px;
-      margin: 15px 10px 5px 0;
-      border: 1px dashed #000;
-      img {
-        width: 20px;
-        height: auto;
-      }
-      &:hover {
-        img {
-          filter: invert(100%);
-          transform: rotate(360deg);
-          transition: all 0.3s ease-in-out;
-        }
-        background: #000;
-        border-color: #FFF;
-        transition: all 0.3s ease-in-out;
-      }
-    }
-  }
+		.description {
+			h2 {
+				font: 400 24px 'Roboto', sans-serif;
+				margin: 5px 0 5px 0;
+			}
+			padding: 10px 15px 15px 15px;
+			background: #FFF;
+		}
+		a.web {
+			position: relative;
+			display: block;
+			padding: 10px 20px;
+			margin: 15px 0 5px 0;
+			border: 1px dashed #000;
+			text-align: center;
+			text-transform: uppercase;
+			color: #000;
+			transition: all 0.2s ease-in-out;
+			&::after {
+				content: '→';
+				position: absolute;
+				right: 50px;
+				bottom: 3px;
+				color: #000;
+				font-size: 30px;
+				opacity: 0;
+				transition: all 0.2s ease-in-out;
+			}
+			&:hover {
+				&::after {
+					opacity: 1;
+					right: 42px;
+					transition: all 0.2s ease-in-out;
+				}
+				padding-right: 52px;
+				transition: all 0.3s ease-in-out;
+			}
+		}
+	}
 }
 
 // Responsivity
+
 @import "responsivity";

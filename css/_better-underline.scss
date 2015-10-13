@@ -22,7 +22,6 @@
   &:hover {
     text-shadow: 0 0 black;
     background-image: linear-gradient(to bottom, darken($color-accent, 6%) 0%, darken($color-accent, 6%) 100%);
-    background-size: 1px 1.5px;
   }
 
   // Style selected links (or else text-shadow makes it look crazy ugly)

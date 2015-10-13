@@ -1,39 +1,46 @@
 @media (max-width: 1000px) {
-  .students {
-    .gutter-sizer {
-      width: 3%;
-    }
-    .student {
-      width: 31.3%;
-    }
-  }
+	.students {
+		.gutter-sizer {
+			width: 3%;
+		}
+		.student {
+			width: 31.3%;
+			a.web:hover {
+				&::after {
+					opacity: 0;
+				}
+				padding-right: 20px;
+				letter-spacing: 3px;
+			}
+		}
+	}
 }
 @media (max-width: 750px) {
-  .header {
-    padding: 50px 0 40px;
-  }
-  .students {
-    .gutter-sizer {
-      width: 3%;
-    }
-    .student {
-      width: 48.5%;
-    }
-  }
+	.header {
+		padding: 50px 0 40px 0;
+	}
+	.students {
+		.gutter-sizer {
+			width: 3%;
+		}
+		.student {
+			width: 48.5%;
+		}
+	}
 }
 @media (max-width: 550px) {
-  .logo {
-    display: none;
-  }
-  .logo-narrow {
-    display: block;
-  }
-  .students {
-    .gutter-sizer {
-      width: 5%;
-    }
-    .student {
-      width: 100%;
-    }
-  }
+	.logo {
+		display: none;
+	}
+	.logo-narrow {
+		display: block;
+	}
+	.students {
+		.gutter-sizer {
+			width: 5%;
+		}
+		.student {
+			width: 100%;
+		}
+	}
 }
