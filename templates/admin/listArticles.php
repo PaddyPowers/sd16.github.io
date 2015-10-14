@@ -23,10 +23,15 @@
                         <?php foreach ( $results[ 'articles'] as $article ) { ?>
                         <li class="recentUpdatesItem" onclick="location='admin.php?action=editArticle&amp;articleId=<?php echo $article->id?>'">
                             <div class="liquid-row">
-                                <div class="liquid-mobile6" style="margin-bottom:0;">
+								<div class="liquid-mobile1" style="margin-bottom:0;">
+                                    <?php if ( $imagePath = $article->getImagePath( IMG_TYPE_THUMB ) ) { ?>
+										<img src="<?php echo $imagePath?>" alt="Article Thumbnail" style="height:48px;width:auto;border-radius:50%;"/>
+									<?php } ?>
+                                </div>
+                                <div class="liquid-mobile5" style="margin-bottom:0;">
                                     <h1><?php echo $article->fullName?></h1>
                                 </div>
-                                <div class="liquid-mobile6" style="margin-bottom:0;">
+                                <div class="liquid-mobile4" style="margin-bottom:0;">
                                     <div class="date">
                                         <h1><?php echo $article->course?></h1>
 									</div>
