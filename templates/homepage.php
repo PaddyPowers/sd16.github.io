@@ -93,9 +93,9 @@
 				<div class="description clearfix">
 					<h2><?php echo htmlspecialchars( $article->fullName )?></h2>
 					<p><?php echo htmlspecialchars( $article->content )?></p>
-					<div class="web"><a href="" class="no-underline">Website</a></div>
-					<a href="" class="twitter"><img src="images/icon-twitter-bw.svg" alt=""></a>
-					<a href="" class="linkedin"><img src="images/icon-linkedin-bw.svg" alt=""></a>
+					<div class="web"><a href="<?php echo htmlspecialchars( $article->website )?>" class="no-underline">Website</a></div>
+					<a href="<?php echo htmlspecialchars( $article->twitter )?>" class="twitter"><img src="images/icon-twitter-bw.svg" alt=""></a>
+					<a href="<?php echo htmlspecialchars( $article->linkedin )?>" class="linkedin"><img src="images/icon-linkedin-bw.svg" alt=""></a>
 				</div>
 			</div>
 		<?php } ?>

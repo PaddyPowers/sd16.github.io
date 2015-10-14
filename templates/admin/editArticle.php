@@ -36,6 +36,13 @@
             <input type="text" name="fullName" id="fullName" class="textBox" placeholder="Full Name" required autofocus maxlength="255" value="<?php echo htmlspecialchars( $results['article']->fullName )?>" />
             <textarea name="content" id="content"  class="textBox" placeholder="Description" required maxlength="1000"><?php echo htmlspecialchars( $results['article']->content )?></textarea>
           </div>
+		  <div class="card">
+            <h1>Links</h1>
+			<input type="text" name="twitter" id="twitter" class="textBox" placeholder="Twitter URL" required autofocus maxlength="255" value="<?php echo htmlspecialchars( $results['article']->twitter )?>" />
+            <input type="text" name="linkedin" id="linkedin" class="textBox" placeholder="Linkedin URL" required autofocus maxlength="255" value="<?php echo htmlspecialchars( $results['article']->linkedin )?>" />
+            <input type="text" name="website" id="website" class="textBox" placeholder="portfolio URL" required autofocus maxlength="255" value="<?php echo htmlspecialchars( $results['article']->website )?>" />
+            
+		  </div>
         </div>
 
         <div class="liquid-column4">
@@ -86,32 +93,5 @@
     </div>
     </div>
 </div>
-
-	<script>
-    document.getElementById("image").onchange = function() {
-        var reader = new FileReader();
-
-        reader.onload = function(b) {
-            // get loaded data and render thumbnail.
-            document.getElementById("articleImage").src = b.target.result;
-        };
-
-        if (!document.getElementById("articleImage")) {
-
-            $("#articleImageContainer").prepend('   <div class="liquid-row" > \
-            <img id="articleImage" class="textBox" src="<?php echo $imagePath ?>" alt="Article Image" /> \
-          </div> \
-          <div class="liquid-row"> \
-            <label class="click textCenter button" for="deleteImage"> \
-            <input type="checkbox" name="deleteImage" id="deleteImage" value="yes" / > Delete \
-          </div>		 \
-            </label>');
-
-        }
-
-        // read the image file as a data URL.
-        reader.readAsDataURL(this.files[0]);
-    };
-	</script>
 
 </body>
