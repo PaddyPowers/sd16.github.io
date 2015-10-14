@@ -270,9 +270,9 @@ class Article
     $st->bindValue( ":fullName", $this->fullName, PDO::PARAM_STR );
     $st->bindValue( ":course", $this->course, PDO::PARAM_STR );
     $st->bindValue( ":content", $this->content, PDO::PARAM_STR );
-	$st->bindValue( ":twitter", $this->content, PDO::PARAM_STR );
-	$st->bindValue( ":linkedin", $this->content, PDO::PARAM_STR );
-	$st->bindValue( ":website", $this->content, PDO::PARAM_STR );
+	$st->bindValue( ":twitter", $this->twitter, PDO::PARAM_STR );
+	$st->bindValue( ":linkedin", $this->linkedin, PDO::PARAM_STR );
+	$st->bindValue( ":website", $this->website, PDO::PARAM_STR );
     $st->bindValue( ":imageExtension", $this->imageExtension, PDO::PARAM_STR );
     $st->execute();
     $this->id = $conn->lastInsertId();
@@ -298,8 +298,8 @@ class Article
     $st->bindValue( ":course", $this->course, PDO::PARAM_STR );
     $st->bindValue( ":content", $this->content, PDO::PARAM_STR );
 	$st->bindValue( ":twitter", $this->twitter, PDO::PARAM_STR );
-	$st->bindValue( ":linkedin", $this->twitter, PDO::PARAM_STR );
-	$st->bindValue( ":website", $this->twitter, PDO::PARAM_STR );
+	$st->bindValue( ":linkedin", $this->linkedin, PDO::PARAM_STR );
+	$st->bindValue( ":website", $this->website, PDO::PARAM_STR );
     $st->bindValue( ":imageExtension", $this->imageExtension, PDO::PARAM_STR );
     $st->bindValue( ":id", $this->id, PDO::PARAM_INT );
     $st->execute();
