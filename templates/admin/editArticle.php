@@ -42,9 +42,9 @@
             <p>https://www.</p>
             <input type="text" name="website" id="website" class="textBox" placeholder="mywebsite.co.uk" required autofocus maxlength="255" value="<?php echo htmlspecialchars( $results['article']->website )?>" />
             <p>https://www.twitter.com/</p>
-            <input type="text" name="twitter" id="twitter" class="textBox" placeholder="mytwitterlink" required autofocus maxlength="255" value="<?php echo htmlspecialchars( $results['article']->website )?>" />
+            <input type="text" name="twitter" id="twitter" class="textBox" placeholder="mytwitterlink" required autofocus maxlength="255" value="<?php echo htmlspecialchars( $results['article']->twitter )?>" />
             <p>https://www.linkedin.com/</p>
-            <input type="text" name="linkedin" id="linkedin" class="textBox" placeholder="mylinkedinlink" required autofocus maxlength="255" value="<?php echo htmlspecialchars( $results['article']->website )?>" />
+            <input type="text" name="linkedin" id="linkedin" class="textBox" placeholder="mylinkedinlink" required autofocus maxlength="255" value="<?php echo htmlspecialchars( $results['article']->linkedin )?>" />
           </div>
         </div>
 
