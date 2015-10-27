@@ -59,7 +59,7 @@ class Article
     if ( isset( $data['content'] ) ) $this->content = $data['content'];
 	if ( isset( $data['twitter'] ) ) $this->twitter = $data['twitter'];
 	if ( isset( $data['linkedin'] ) ) $this->linkedin = $data['linkedin'];
-	if ( isset( $data['website'] ) ) $this->linkedin = $data['website'];
+	if ( isset( $data['website'] ) ) $this->website = $data['website'];
     if ( isset( $data['imageExtension'] ) ) $this->imageExtension = preg_replace ( "/[^\.\,\-\_\'\"\@\?\!\$ a-zA-Z0-9()]/", "", $data['imageExtension'] );
   }
 
