@@ -17,24 +17,34 @@
   <div class="container">
 
   <?php include "templates/admin/include/adminNavigation.php" ?>
-    
+
 
     <div class="playground">
       <form action="admin.php?action=<?php echo $results['formAction']?>" method="post" enctype="multipart/form-data" onsubmit="closeKeepAlive()">
       <input type="hidden" name="articleId" value="<?php echo $results['article']->id ?>"/>
-	  
+
 		<?php if ( isset( $results['errorMessage'] ) ) { ?>
 			<div class="errorMessage"><?php echo $results['errorMessage'] ?></div>
 		<?php } ?>
-	  
+
       <div class="liquid-row">
 
         <div class="liquid-column8">
-		
+
           <div class="card">
             <h1>Content</h1>
             <input type="text" name="fullName" id="fullName" class="textBox" placeholder="Full Name" required autofocus maxlength="255" value="<?php echo htmlspecialchars( $results['article']->fullName )?>" />
             <textarea name="content" id="content"  class="textBox" placeholder="Description" required maxlength="1000"><?php echo htmlspecialchars( $results['article']->content )?></textarea>
+          </div>
+
+          <div class="card">
+            <h1>External Links</h1>
+            <p>https://www.</p>
+            <input type="text" name="website" id="website" class="textBox" placeholder="mywebsite.co.uk" required autofocus maxlength="255" value="<?php echo htmlspecialchars( $results['article']->website )?>" />
+            <p>https://www.twitter.com/</p>
+            <input type="text" name="twitter" id="twitter" class="textBox" placeholder="mytwitterlink" required autofocus maxlength="255" value="<?php echo htmlspecialchars( $results['article']->website )?>" />
+            <p>https://www.linkedin.com/</p>
+            <input type="text" name="linkedin" id="linkedin" class="textBox" placeholder="mylinkedinlink" required autofocus maxlength="255" value="<?php echo htmlspecialchars( $results['article']->website )?>" />
           </div>
         </div>
 
@@ -43,13 +53,13 @@
             <h1>Attributes</h1>
             <input type="date"  class="textBox" name="publicationDate" id="publicationDate" placeholder="YYYY-MM-DD" required maxlength="10" value="<?php echo $results['article']->publicationDate ? date( "Y-m-d", $results['article']->publicationDate ) : "" ?>" />
 			<select name="course" id="course" >
-              <option> 
+              <option>
               <?php if( htmlspecialchars( $results['article']->course === NULL)){
                 echo "Choose a course";
                 }
                 else{
                   echo htmlspecialchars( $results['article']->course );
-                }            
+                }
               ?>
               <option value="Interaction Design">Interaction Design</option>
               <option value="Product Design">Product Design</option>
@@ -62,7 +72,7 @@
               <?php if ( $results['article'] && $imagePath = $results['article']->getImagePath() ) { ?>
               <div class="liquid-row" >
                 <img id="articleImage" class="textBox" src="<?php echo $imagePath ?>" alt="Article Image" />
-              </div> 
+              </div>
               <?php } ?>
             </div>
           </div>
