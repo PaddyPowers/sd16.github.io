@@ -91,7 +91,7 @@
 				</a>
 				<div class="description clearfix">
 					<h2><?php echo htmlspecialchars( $article->fullName )?></h2>
-					<!--<p><?php echo htmlspecialchars( $article->content )?></p>--->
+					<p><?php echo htmlspecialchars( $article->content )?></p>
 					<?php if($article->website !== null){ ?>
 						<div class="web"><a href="<?php echo htmlspecialchars( $article->website )?>" class="no-underline">Website</a></div>
 					<?php } ?>
