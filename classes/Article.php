@@ -32,6 +32,12 @@ class Article
   * @var string The HTML content of the article
   */
   public $content = null;
+  
+  public $twitter = null;
+  
+  public $linkedin = null;
+  
+  public $website = null;
 
   /**
   * @var string twitter url
@@ -117,7 +123,7 @@ class Article
 
       // Store the image
 
-      $tempFilename = trim( $image['tmp_name'] ); 
+      $tempFilename = trim( $image['tmp_name'] );
 
       if ( is_uploaded_file ( $tempFilename ) ) {
         if ( !( move_uploaded_file( $tempFilename, $this->getImagePath() ) ) ) trigger_error( "Article::storeUploadedImage(): Couldn't move uploaded file.", E_USER_ERROR );
@@ -180,7 +186,7 @@ class Article
     foreach (glob( ARTICLE_IMAGE_PATH . "/" . IMG_TYPE_FULLSIZE . "/" . $this->id . ".*") as $filename) {
       if ( !unlink( $filename ) ) trigger_error( "Article::deleteImages(): Couldn't delete image file.", E_USER_ERROR );
     }
-    
+
     // Delete all thumbnail images for this article
     foreach (glob( ARTICLE_IMAGE_PATH . "/" . IMG_TYPE_THUMB . "/" . $this->id . ".*") as $filename) {
       if ( !unlink( $filename ) ) trigger_error( "Article::deleteImages(): Couldn't delete thumbnail file.", E_USER_ERROR );
@@ -288,7 +294,7 @@ class Article
 
     // Does the Article object have an ID?
     if ( is_null( $this->id ) ) trigger_error ( "Article::update(): Attempt to update an Article object that does not have its ID property set.", E_USER_ERROR );
-   
+
     // Update the Article
     $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
     $sql = "UPDATE articles SET publicationDate=FROM_UNIXTIME(:publicationDate), fullName=:fullName, course=:course, content=:content, twitter=:twitter, linkedin=:linkedin, website=:website, imageExtension=:imageExtension WHERE id = :id";

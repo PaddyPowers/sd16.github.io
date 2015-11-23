@@ -75,7 +75,6 @@
 			<a class="no-underline pd" href="">Product Design</a>
 			<a class="no-underline dixd" href="">Digital Interaction Design</a>
 		</div> -->
-		<a href="#" class="edit">Edit</a>
 	</div>
 	<!--  Students -->
 	<div class="students" id="students">

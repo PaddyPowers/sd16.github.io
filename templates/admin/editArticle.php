@@ -38,10 +38,19 @@
           </div>
 		  <div class="card">
             <h1>Links</h1>
-			<input type="text" name="twitter" id="twitter" class="textBox" placeholder="Twitter URL" required autofocus maxlength="255" value="<?php echo htmlspecialchars( $results['article']->twitter )?>" />
-            <input type="text" name="linkedin" id="linkedin" class="textBox" placeholder="Linkedin URL" required autofocus maxlength="255" value="<?php echo htmlspecialchars( $results['article']->linkedin )?>" />
-            <input type="text" name="website" id="website" class="textBox" placeholder="portfolio URL" required autofocus maxlength="255" value="<?php echo htmlspecialchars( $results['article']->website )?>" />
-            
+			<div style="margin-bottom:10px;">
+				<p style="display:inline;color:#97a1aa;font-size:18px;">www.twitter.com/</p>
+				<input type="text" name="twitter" id="twitter" class="textBox" placeholder="twitter" style="width:auto;margin-bottom:0;" required autofocus maxlength="255" value="<?php echo htmlspecialchars( $results['article']->twitter )?>" />
+			</div>
+			<div style="margin-bottom:10px;">
+				<p style="display:inline;color:#97a1aa;font-size: 18px;">www.linkedin.com/</p>
+				<input type="text" name="linkedin" id="linkedin" class="textBox" placeholder="linkedin" style="width:auto;margin-bottom:0;" required autofocus maxlength="255" value="<?php echo htmlspecialchars( $results['article']->linkedin )?>" />
+            </div>
+			<div style="margin-bottom:10px;">
+				<p style="display:inline;color:#97a1aa;font-size: 18px;">www.</p>
+				<input type="text" name="website" id="website" class="textBox" placeholder="portfolio" style="width:auto;margin-bottom:0;" required autofocus maxlength="255" value="<?php echo htmlspecialchars( $results['article']->website )?>" />
+            </div>
+			
 		  </div>
         </div>
 
