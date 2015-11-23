@@ -83,26 +83,61 @@
 		<div class="gutter-sizer"></div>
 
 		<?php $ctr=0; foreach ( $results['articles'] as $article ) { if($ctr>=999) break; else $ctr++;  ?>
-			<div class="student">
-				<a href="">
-					<?php if ( $imagePath = $article->getImagePath( IMG_TYPE_THUMB ) ) { ?>
-						<img src="<?php echo $imagePath?>" alt="Article Thumbnail"/>
-					<?php } ?>
-				</a>
-				<div class="description clearfix">
-					<h2><?php echo htmlspecialchars( $article->fullName )?></h2>
-					<p><?php echo htmlspecialchars( $article->content )?></p>
-					<?php if($article->website !== null){ ?>
-						<div class="web"><a href="<?php echo htmlspecialchars( $article->website )?>" class="no-underline">Website</a></div>
-					<?php } ?>
-					<?php if($article->twitter !== null){ ?>
-						<a href="<?php echo htmlspecialchars( $article->twitter )?>" class="twitter"><img src="images/icon-twitter-bw.svg" alt=""></a>
-					<?php } ?>
-					<?php if($article->linkedin !== null){ ?>
-						<a href="<?php echo htmlspecialchars( $article->linkedin )?>" class="linkedin"><img src="images/icon-linkedin-bw.svg" alt=""></a>
-					<?php } ?>
+
+			<?php if($article->content !== null){ ?>
+
+				<div class="student">
+					<a href="">
+						<?php if ( $imagePath = $article->getImagePath( IMG_TYPE_THUMB ) ) { ?>
+							<img src="<?php echo $imagePath?>" alt="Article Thumbnail"/>
+						<?php } ?>
+					</a>
+					<div class="description clearfix">
+						<h2><?php echo htmlspecialchars( $article->fullName )?></h2>
+						<p><?php echo htmlspecialchars( $article->content )?></p>
+						<?php if($article->website !== null){ ?>
+							<div class="web"><a href="<?php echo htmlspecialchars( $article->website )?>" class="no-underline">Website</a></div>
+						<?php } ?>
+						<?php if($article->twitter !== null){ ?>
+							<a href="<?php echo htmlspecialchars( $article->twitter )?>" class="twitter"><img src="images/icon-twitter-bw.svg" alt=""></a>
+						<?php } ?>
+						<?php if($article->linkedin !== null){ ?>
+							<a href="<?php echo htmlspecialchars( $article->linkedin )?>" class="linkedin"><img src="images/icon-linkedin-bw.svg" alt=""></a>
+						<?php } ?>
+					</div>
 				</div>
-			</div>
+
+			<?php } ?>
+
+		<?php } ?>
+
+		<?php $ctr=0; foreach ( $results['articles'] as $article ) { if($ctr>=999) break; else $ctr++;  ?>
+
+			<?php if($article->content == null){ ?>
+
+				<div class="student">
+					<a href="">
+						<?php if ( $imagePath = $article->getImagePath( IMG_TYPE_THUMB ) ) { ?>
+							<img src="<?php echo $imagePath?>" alt="Article Thumbnail"/>
+						<?php } ?>
+					</a>
+					<div class="description clearfix">
+						<h2><?php echo htmlspecialchars( $article->fullName )?></h2>
+						<p><?php echo htmlspecialchars( $article->content )?></p>
+						<?php if($article->website !== null){ ?>
+							<div class="web"><a href="<?php echo htmlspecialchars( $article->website )?>" class="no-underline">Website</a></div>
+						<?php } ?>
+						<?php if($article->twitter !== null){ ?>
+							<a href="<?php echo htmlspecialchars( $article->twitter )?>" class="twitter"><img src="images/icon-twitter-bw.svg" alt=""></a>
+						<?php } ?>
+						<?php if($article->linkedin !== null){ ?>
+							<a href="<?php echo htmlspecialchars( $article->linkedin )?>" class="linkedin"><img src="images/icon-linkedin-bw.svg" alt=""></a>
+						<?php } ?>
+					</div>
+				</div>
+
+			<?php } ?>
+
 		<?php } ?>
 
 	</div>
