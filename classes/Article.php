@@ -32,12 +32,6 @@ class Article
   * @var string The HTML content of the article
   */
   public $content = null;
-  
-  public $twitter = null;
-  
-  public $linkedin = null;
-  
-  public $website = null;
 
   /**
   * @var string twitter url
