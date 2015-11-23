@@ -1,1 +1,0 @@
-$(document).ready(function(){var e=$(".students");e.imagesLoaded(function(){e.packery({itemSelector:".student",gutter:".gutter-sizer"})})});
