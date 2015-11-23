@@ -39,15 +39,15 @@
 		  <div class="card">
             <h1>Links</h1>
 			<div style="margin-bottom:10px;">
-				<p style="display:inline;color:#97a1aa;font-size:18px;">www.twitter.com/</p>
+				<p style="display:inline;color:#97a1aa;font-size:18px;">facebook</p>
 				<input type="text" name="twitter" id="twitter" class="textBox" placeholder="twitter" style="width:auto;margin-bottom:0;" required autofocus maxlength="255" value="<?php echo htmlspecialchars( $results['article']->twitter )?>" />
 			</div>
 			<div style="margin-bottom:10px;">
-				<p style="display:inline;color:#97a1aa;font-size: 18px;">www.linkedin.com/</p>
+				<p style="display:inline;color:#97a1aa;font-size: 18px;">linkedin</p>
 				<input type="text" name="linkedin" id="linkedin" class="textBox" placeholder="linkedin" style="width:auto;margin-bottom:0;" required autofocus maxlength="255" value="<?php echo htmlspecialchars( $results['article']->linkedin )?>" />
             </div>
 			<div style="margin-bottom:10px;">
-				<p style="display:inline;color:#97a1aa;font-size: 18px;">www.</p>
+				<p style="display:inline;color:#97a1aa;font-size: 18px;">website</p>
 				<input type="text" name="website" id="website" class="textBox" placeholder="portfolio" style="width:auto;margin-bottom:0;" required autofocus maxlength="255" value="<?php echo htmlspecialchars( $results['article']->website )?>" />
             </div>
 			
