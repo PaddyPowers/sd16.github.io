@@ -1,0 +1,509 @@
+/*
+  HTML5 Reset :: style.css
+  ----------------------------------------------------------
+  We have learned much from/been inspired by/taken code where offered from:
+
+  Eric Meyer          :: http://meyerweb.com
+  HTML5 Doctor        :: http://html5doctor.com
+  and the HTML5 Boilerplate :: http://html5boilerplate.com
+
+-------------------------------------------------------------------------------*/
+/* Let's default this puppy out
+-------------------------------------------------------------------------------*/
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+article, aside, figure, footer, header, nav, section, details, summary {
+  display: block;
+}
+
+/* Handle box-sizing while better addressing child elements:
+   http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
+/* Responsive images and other embedded objects
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+   If this default setting for images is causing issues, you might want to replace it with a .responsive class instead. */
+img,
+object,
+embed {
+  max-width: 100%;
+}
+img {
+	width:100%;
+}
+
+/* force a vertical scrollbar to prevent a jumpy page */
+html {
+  overflow-y: scroll;
+}
+
+/* we use a lot of ULs that aren't bulleted.
+  don't forget to restore the bullets within content. */
+ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted #000;
+  cursor: help;
+}
+
+/* tables still need cellspacing="0" in the markup */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th {
+  font-weight: bold;
+  vertical-align: bottom;
+}
+
+td {
+  font-weight: normal;
+  vertical-align: top;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+pre {
+  white-space: pre;
+  /* CSS2 */
+  white-space: pre-wrap;
+  /* CSS 2.1 */
+  white-space: pre-line;
+  /* CSS 3 (and 2.1 as well, actually) */
+  word-wrap: break-word;
+  /* IE */
+}
+
+input[type="radio"] {
+  vertical-align: text-bottom;
+}
+
+input[type="checkbox"] {
+  vertical-align: bottom;
+}
+
+.ie7 input[type="checkbox"] {
+  vertical-align: baseline;
+}
+
+.ie6 input {
+  vertical-align: text-bottom;
+}
+
+select, input, textarea {
+  font: 99% sans-serif;
+}
+
+table {
+  font-size: inherit;
+  font: 100%;
+}
+
+small {
+  font-size: 85%;
+}
+
+strong {
+  font-weight: bold;
+}
+
+td, td img {
+  vertical-align: top;
+}
+
+/* Make sure sup and sub don't mess with your line-heights http://gist.github.com/413930 */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* standardize any monospaced elements */
+pre, code, kbd, samp {
+  font-family: monospace, sans-serif;
+}
+
+/* hand cursor on clickable elements */
+.clickable,
+label,
+input[type=button],
+input[type=submit],
+input[type=file],
+button {
+  cursor: pointer;
+}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea {
+  margin: 0;
+}
+
+/* make buttons play nice in IE */
+button,
+input[type=button] {
+  width: auto;
+  overflow: visible;
+}
+
+/* scale images in IE7 more attractively */
+.ie7 img {
+  -ms-interpolation-mode: bicubic;
+}
+
+/* prevent BG image flicker upon hover
+   (commented out as usage is rare, and the filter syntax messes with some pre-processors)
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+*/
+/* let's clear some floats */
+.clearfix:before, .clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+::-moz-placeholder {
+  opacity: 1 !important;
+}
+
+::-webkit-input-placeholder {
+  opacity: 1 !important;
+}
+
+p,
+a,
+strong {
+  font: 18px 'Roboto', sans-serif;
+  font-weight: 300;
+}
+p::-moz-selection,
+a::-moz-selection,
+strong::-moz-selection {
+  background-color: black;
+  color: white;
+  text-shadow: none;
+}
+p::selection,
+a::selection,
+strong::selection {
+  background-color: black;
+  color: white;
+  text-shadow: none;
+}
+
+strong {
+  font-weight: 500;
+}
+
+a,
+a:visited {
+  color: #000;
+  font-weight: 400;
+}
+
+a.no-underline {
+  text-decoration: none;
+}
+
+body {
+  padding: 0 30px;
+}
+
+.header {
+  padding: 70px 0 40px;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+.header p {
+  max-width: 700px;
+  margin-bottom: 10px;
+}
+.header p,
+.header a,
+.header strong {
+  font-size: 21px;
+  line-height: 29px;
+}
+.header p a {
+  color: black;
+  text-decoration: none;
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.25) 0%, black 100%);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25) 0%, black 100%);
+  background-repeat: repeat-x;
+  background-size: 1px 1px;
+  background-position: 0 95%;
+  text-shadow: 1px 0 white, -1px 0 white;
+}
+@media (-webkit-min-device-pixel-ratio: 1.75), (min-resolution: 168dpi) {
+  .header p a {
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.25) 0%, black 100%);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25) 0%, black 100%);
+    background-position: 0 93%;
+  }
+}
+.header p a:hover {
+  text-shadow: 0 0 black;
+  background-image: -webkit-linear-gradient(top, black 0%, black 100%);
+  background-image: linear-gradient(to bottom, black 0%, black 100%);
+  background-size: 1px 1.5px;
+}
+.header p a::-moz-selection,
+.header p a > *::-moz-selection {
+  background-color: black;
+  background-image: linear-gradient(white 0%, white 100%);
+  text-shadow: 0 0 black;
+  color: white;
+  text-shadow: none;
+}
+.header p a::selection,
+.header p a > *::selection {
+  background-color: black;
+  background-image: -webkit-linear-gradient(white 0%, white 100%);
+  background-image: linear-gradient(white 0%, white 100%);
+  text-shadow: 0 0 black;
+  color: white;
+  text-shadow: none;
+}
+.header p a::-moz-selection,
+.header p a > *::-moz-selection {
+  background-color: black;
+  color: white;
+  text-shadow: none;
+}
+
+.logo,
+.logo-narrow {
+  display: block;
+  max-width: 700px;
+  margin-bottom: 20px;
+}
+.logo img,
+.logo-narrow img {
+  display: block;
+}
+
+.logo-narrow {
+  display: none;
+}
+
+.social-icons {
+  margin-bottom: 20px;
+}
+.social-icons a {
+  display: block;
+  float: left;
+}
+.social-icons a:hover {
+  opacity: 0.7;
+}
+
+.select-course {
+  margin: 20px auto 0;
+}
+.select-course a {
+  padding: 10px 15px;
+  float: left;
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  font-size: 22px;
+}
+.select-course a + a {
+  float: right;
+}
+
+.students {
+  max-width: 1000px;
+  padding-bottom: 40px;
+  margin: 0 auto;
+}
+.students .gutter-sizer {
+  width: 3%;
+}
+.students .student {
+  width: 22.75%;
+  border: 1px dashed #000;
+  position: relative;
+  overflow: hidden;
+}
+.students .student > a:hover img {
+  -webkit-filter: brightness(110%);
+          filter: brightness(110%);
+}
+.students .student > a:hover + .description a.web {
+  padding-right: 52px;
+  -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+}
+.students .student > a:hover + .description a.web::after {
+  opacity: 1;
+  right: 42px;
+  -webkit-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
+}
+.students .student > a img {
+  display: block;
+  -webkit-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
+}
+.students .student .description {
+  padding: 10px 15px 15px;
+  background: #fff;
+}
+.students .student .description h2 {
+  font: 400 24px 'Roboto', sans-serif;
+  margin: 5px 0;
+}
+.students .student .web a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 15px;
+  margin: 15px 0 5px;
+  border: 1px dashed #000;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000;
+  -webkit-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
+}
+.students .student .web a:hover {
+  letter-spacing: 5px;
+  color: #FFF;
+  background: #000;
+  border-color: #FFF;
+  -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+}
+.students .student a.twitter, .students .student a.linkedin {
+  display: inline-block;
+  padding: 11px 15px 8px 15px;
+  margin: 15px 10px 5px 0;
+  border: 1px dashed #000;
+}
+.students .student a.twitter img, .students .student a.linkedin img {
+  width: 20px;
+  height: auto;
+}
+.students .student a.twitter:hover, .students .student a.linkedin:hover {
+  background: #000;
+  border-color: #FFF;
+  -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+}
+.students .student a.twitter:hover img, .students .student a.linkedin:hover img {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+  -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+  -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 1000px) {
+  .students .gutter-sizer {
+    width: 3%;
+  }
+  .students .student {
+    width: 31.3%;
+  }
+}
+@media (max-width: 750px) {
+  .header {
+    padding: 50px 0 40px;
+  }
+
+  .students .gutter-sizer {
+    width: 3%;
+  }
+  .students .student {
+    width: 48.5%;
+  }
+}
+@media (max-width: 550px) {
+  .logo {
+    display: none;
+  }
+
+  .logo-narrow {
+    display: block;
+  }
+
+  .students .gutter-sizer {
+    width: 5%;
+  }
+  .students .student {
+    width: 100%;
+  }
+}
