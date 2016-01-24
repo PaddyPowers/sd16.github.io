@@ -42,12 +42,12 @@ class Article
   * @var string linkedin url
   */
   public $linkedin = null;
-  
+
   /**
   * @var string portfolio
   */
   public $website = null;
-  
+
   /**
   * @var string The filename extension of the article's full-size and thumbnail images (empty string means the article has no image)
   */

@@ -4,11 +4,17 @@ $(document).ready(function(){
 
   // initialize Packery after all images have loaded
   $container.imagesLoaded( function() {
+
+    // Initialize packery.js
     $container.packery({
       // options...
-      itemSelector: '.student',
+      itemSelector: '.packery-item',
       gutter: '.gutter-sizer'
     });
+
+    // Initialize Magnific Popup
+     $('.students .photo a').magnificPopup({type:'image'});
+
   });
 
 });

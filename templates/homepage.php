@@ -24,6 +24,7 @@
 
 	<!-- Styles -->
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="../css/magnific-popup.css">
 
 	<!-- Favicons -->
 	<link rel="shortcut icon" href="img/favicon.ico">
@@ -52,41 +53,88 @@
 		<a class="logo-narrow" href="">
 			<img src="images/logo-narrow.svg" alt="">
 		</a>
-		<div class="social-icons clearfix">
-			<a href="https://twitter.com/SclDgtl">
-				<img src="images/icon-twitter.svg" alt="">
-			</a>
-			<a href="https://instagram.com/socialdigital2016/">
-				<img src="images/icon-instagram.svg" alt="">
-			</a>
-			<a href="https://www.facebook.com/scldgtl">
-				<img src="images/icon-facebook.svg" alt="">
-			</a>
-			<a href="https://www.youtube.com/channel/UCkLyEiQ1UxmJRzb0WrYxMoA/videos">
-				<img src="images/icon-youtube.svg" alt="">
-			</a>
-		</div>
+		<div class="menu-bar clearfix">
 
-		<p>Social Digital is the grouping of
-			<strong>Product Design</strong> &
-			<strong>Digital Interaction Design</strong> courses at <a href="http://www.dundee.ac.uk/djcad/">DJCAD</a> in the <a href="https://www.dundee.ac.uk">University of Dundee</a>.</p>
-		<p>This space will keep you informed about what's happening in the year that is about to graduate.</p>
-		<!-- <div class="select-course clearfix">
-			<a class="no-underline pd" href="">Product Design</a>
-			<a class="no-underline dixd" href="">Digital Interaction Design</a>
-		</div> -->
+			<ul class="menu">
+				<li class="active">
+					<div>
+						<a href="#">Feed</a>
+					</div>
+				</li>
+				<li>
+					<div>
+						<a href="#">Students</a>
+					</div>
+				</li>
+				<li>
+					<div>
+						<a href="#">About</a>
+					</div>
+				</li>
+			</ul>
+			<div class="icons">
+				<a href="https://twitter.com/SclDgtl">
+					<img src="images/icon-twitter.svg" alt="">
+				</a>
+				<a href="https://instagram.com/socialdigital2016/">
+					<img src="images/icon-instagram.svg" alt="">
+				</a>
+				<a href="https://www.facebook.com/scldgtl">
+					<img src="images/icon-facebook.svg" alt="">
+				</a>
+				<a href="https://www.youtube.com/channel/UCkLyEiQ1UxmJRzb0WrYxMoA/videos">
+					<img src="images/icon-youtube.svg" alt="">
+				</a>
+			</div>
+		</div>
+		<div class="about-short">
+			<p>Social Digital is the grouping of
+				<strong>Product Design</strong> &
+				<strong>Digital Interaction Design</strong> courses at <a href="http://www.dundee.ac.uk/djcad/">DJCAD</a> in the <a href="https://www.dundee.ac.uk">University of Dundee</a>.</p>
+			<p>This space will keep you informed about what's happening in the year that is about to graduate.</p>
+			<!-- <div class="select-course clearfix">
+				<a class="no-underline pd" href="">Product Design</a>
+				<a class="no-underline dixd" href="">Digital Interaction Design</a>
+			</div> -->
+		</div>
 	</div>
-	<!--  Students -->
+	<!--  Content -->
 	<div class="students" id="students">
 
 	 <!-- Div from which packery.js calculates its gutter -->
 		<div class="gutter-sizer"></div>
 
+		<!--  Article template -->
+		<div class="packery-item article">
+			<a href="#" class="heading">
+				<h2>Article about something</h2>
+				<p>
+					Alan Reeve
+				</p>
+			</a>
+			<div class="description clearfix">
+				<p>Researching and designing for Body Dysmorphic Disorder (BDD), an anxiety disorder that causes a person to establish a distorted view of his or her own body. 'A mind that hates its…</p>
+				<div class="web"><a href="awjstewart.wordpress.com" class="no-underline">Read</a></div>
+			</div>
+		</div>
+
+		<!--  Photo template -->
+		<div class="packery-item photo">
+			<a href="http://lorempixel.com/480/480">
+				<img src="http://lorempixel.com/480/480" alt="" />
+			</a>
+		</div>
+		<div class="packery-item photo">
+			<a href="http://lorempixel.com/480/280">
+				<img src="http://lorempixel.com/480/280" alt="" />
+			</a>
+		</div>
+
 		<?php $ctr=0; foreach ( $results['articles'] as $article ) { if($ctr>=999) break; else $ctr++;  ?>
 
 			<?php if($article->content !== null){ ?>
 
-				<div class="student">
+				<div class="packery-item student">
 					<a href="">
 						<?php if ( $imagePath = $article->getImagePath( IMG_TYPE_THUMB ) ) { ?>
 							<img src="<?php echo $imagePath?>" alt="Article Thumbnail"/>
@@ -115,7 +163,7 @@
 
 			<?php if($article->content == null){ ?>
 
-				<div class="student">
+				<div class="packery-item">
 					<a href="">
 						<?php if ( $imagePath = $article->getImagePath( IMG_TYPE_THUMB ) ) { ?>
 							<img src="<?php echo $imagePath?>" alt="Article Thumbnail"/>
@@ -149,7 +197,7 @@
 	</script>
 	<script src="js/packery.min.js"></script>
 	<script src="js/imagesloaded.min.js"></script>
-
+	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/scripts.js"></script>
 
 </body>

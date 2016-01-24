@@ -3,7 +3,7 @@
     .gutter-sizer {
       width: 3%;
     }
-    .student {
+    .packery-item{
       width: 31.3%;
     }
   }
@@ -11,12 +11,16 @@
 @media (max-width: 750px) {
   .header {
     padding: 50px 0 40px;
+    .menu-bar .icons, .menu-bar .menu {
+      float: none;
+      margin-top: 20px;
+    }
   }
   .students {
     .gutter-sizer {
       width: 3%;
     }
-    .student {
+    .packery-item{
       width: 48.5%;
     }
   }
@@ -32,7 +36,7 @@
     .gutter-sizer {
       width: 5%;
     }
-    .student {
+    .packery-item{
       width: 100%;
     }
   }

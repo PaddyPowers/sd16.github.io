@@ -45,9 +45,6 @@ object,
 embed {
   max-width: 100%;
 }
-img {
-	width:100%;
-}
 
 /* force a vertical scrollbar to prevent a jumpy page */
 html {
@@ -289,10 +286,10 @@ body {
   max-width: 700px;
   margin-bottom: 10px;
 }
-.header p,
-.header a,
-.header strong {
-  font-size: 21px;
+.header .about-short p,
+.header .about-short a,
+.header .about-short strong {
+  font-size: 20px;
   line-height: 29px;
 }
 .header p a {
@@ -357,14 +354,38 @@ body {
   display: none;
 }
 
-.social-icons {
+.menu-bar {
   margin-bottom: 20px;
 }
-.social-icons a {
+.menu-bar .icons {
+  float: right;
+}
+.menu-bar .menu {
+  float: left;
+  display: table;
+}
+.menu-bar .menu li {
+  float: left;
+  margin-right: 18px;
+}
+.menu-bar .menu li.active div {
+  border: 1px dashed black;
+  padding: 0 18px;
+}
+.menu-bar .menu div {
+  height: 67px;
+  border: 1px solid transparent;
+}
+.menu-bar .menu a {
+  font-size: 24px;
+  padding-top: 16px;
+  text-decoration: none;
+}
+.menu-bar a {
   display: block;
   float: left;
 }
-.social-icons a:hover {
+.menu-bar a:hover {
   opacity: 0.7;
 }
 
@@ -391,41 +412,71 @@ body {
 .students .gutter-sizer {
   width: 3%;
 }
-.students .student {
+.students .student,
+.students .article,
+.students .photo {
   width: 22.75%;
   border: 1px dashed #000;
   position: relative;
   overflow: hidden;
 }
-.students .student > a:hover img {
+.students .student > a:hover img,
+.students .article > a:hover img,
+.students .photo > a:hover img {
   -webkit-filter: brightness(110%);
           filter: brightness(110%);
 }
-.students .student > a:hover + .description a.web {
+.students .student > a:hover + .description a.web,
+.students .article > a:hover + .description a.web,
+.students .photo > a:hover + .description a.web {
   padding-right: 52px;
   -webkit-transition: all 0.3s ease-in-out;
-          transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
-.students .student > a:hover + .description a.web::after {
+.students .student > a:hover + .description a.web::after,
+.students .article > a:hover + .description a.web::after,
+.students .photo > a:hover + .description a.web::after {
   opacity: 1;
   right: 42px;
   -webkit-transition: all 0.2s ease-in-out;
-          transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
-.students .student > a img {
+.students .student > a img,
+.students .article > a img,
+.students .photo > a img {
   display: block;
   -webkit-transition: all 0.2s ease-in-out;
-          transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
-.students .student .description {
+.students .student .description,
+.students .student .heading,
+.students .article .description,
+.students .article .heading,
+.students .photo .description,
+.students .photo .heading {
   padding: 10px 15px 15px;
   background: #fff;
 }
-.students .student .description h2 {
+.students .student .description h2,
+.students .student .heading h2,
+.students .article .description h2,
+.students .article .heading h2,
+.students .photo .description h2,
+.students .photo .heading h2 {
   font: 400 24px 'Roboto', sans-serif;
   margin: 5px 0;
 }
-.students .student .web a {
+.students .student .heading,
+.students .article .heading,
+.students .photo .heading {
+  display: block;
+  background: black;
+  color: white;
+  text-decoration: none;
+}
+.students .student .web a,
+.students .article .web a,
+.students .photo .web a {
   position: relative;
   display: inline-block;
   padding: 10px 15px;
@@ -435,47 +486,69 @@ body {
   text-transform: uppercase;
   color: #000;
   -webkit-transition: all 0.2s ease-in-out;
-          transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
-.students .student .web a:hover {
+.students .student .web a:hover,
+.students .article .web a:hover,
+.students .photo .web a:hover {
   letter-spacing: 5px;
   color: #FFF;
   background: #000;
   border-color: #FFF;
   -webkit-transition: all 0.3s ease-in-out;
-          transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
-.students .student a.twitter, .students .student a.linkedin {
+.students .student a.twitter,
+.students .student a.linkedin,
+.students .article a.twitter,
+.students .article a.linkedin,
+.students .photo a.twitter,
+.students .photo a.linkedin {
   display: inline-block;
-  padding: 11px 15px 8px 15px;
+  padding: 11px 15px 8px;
   margin: 15px 10px 5px 0;
   border: 1px dashed #000;
 }
-.students .student a.twitter img, .students .student a.linkedin img {
+.students .student a.twitter img,
+.students .student a.linkedin img,
+.students .article a.twitter img,
+.students .article a.linkedin img,
+.students .photo a.twitter img,
+.students .photo a.linkedin img {
   width: 20px;
   height: auto;
 }
-.students .student a.twitter:hover, .students .student a.linkedin:hover {
+.students .student a.twitter:hover,
+.students .student a.linkedin:hover,
+.students .article a.twitter:hover,
+.students .article a.linkedin:hover,
+.students .photo a.twitter:hover,
+.students .photo a.linkedin:hover {
   background: #000;
   border-color: #FFF;
   -webkit-transition: all 0.3s ease-in-out;
-          transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
-.students .student a.twitter:hover img, .students .student a.linkedin:hover img {
+.students .student a.twitter:hover img,
+.students .student a.linkedin:hover img,
+.students .article a.twitter:hover img,
+.students .article a.linkedin:hover img,
+.students .photo a.twitter:hover img,
+.students .photo a.linkedin:hover img {
   -webkit-filter: invert(100%);
           filter: invert(100%);
   -webkit-transform: rotate(360deg);
       -ms-transform: rotate(360deg);
           transform: rotate(360deg);
   -webkit-transition: all 0.3s ease-in-out;
-          transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 @media (max-width: 1000px) {
   .students .gutter-sizer {
     width: 3%;
   }
-  .students .student {
+  .students .packery-item {
     width: 31.3%;
   }
 }
@@ -483,11 +556,15 @@ body {
   .header {
     padding: 50px 0 40px;
   }
+  .header .menu-bar .icons, .header .menu-bar .menu {
+    float: none;
+    margin-top: 20px;
+  }
 
   .students .gutter-sizer {
     width: 3%;
   }
-  .students .student {
+  .students .packery-item {
     width: 48.5%;
   }
 }
@@ -503,7 +580,7 @@ body {
   .students .gutter-sizer {
     width: 5%;
   }
-  .students .student {
+  .students .packery-item {
     width: 100%;
   }
 }
