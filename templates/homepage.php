@@ -53,7 +53,9 @@
 		<a class="logo-narrow" href="">
 			<img src="images/logo-narrow.svg" alt="">
 		</a>
-		<div class="menu-bar clearfix">
+
+		<!-- Menu bar -->
+		<!-- <div class="menu-bar clearfix">
 
 			<ul class="menu">
 				<li class="active">
@@ -86,7 +88,8 @@
 					<img src="images/icon-youtube.svg" alt="">
 				</a>
 			</div>
-		</div>
+		</div> -->
+
 		<div class="about-short">
 			<p>Social Digital is the grouping of
 				<strong>Product Design</strong> &
@@ -105,7 +108,7 @@
 		<div class="gutter-sizer"></div>
 
 		<!--  Article template -->
-		<div class="packery-item article">
+		<!-- <div class="packery-item article">
 			<a href="#" class="heading">
 				<h2>Article about something</h2>
 				<p>
@@ -116,10 +119,10 @@
 				<p>Researching and designing for Body Dysmorphic Disorder (BDD), an anxiety disorder that causes a person to establish a distorted view of his or her own body. 'A mind that hates its…</p>
 				<div class="web"><a href="awjstewart.wordpress.com" class="no-underline">Read</a></div>
 			</div>
-		</div>
+		</div> -->
 
 		<!--  Photo template -->
-		<div class="packery-item photo">
+		<!-- <div class="packery-item photo">
 			<a href="http://lorempixel.com/480/480">
 				<img src="http://lorempixel.com/480/480" alt="" />
 			</a>
@@ -128,7 +131,7 @@
 			<a href="http://lorempixel.com/480/280">
 				<img src="http://lorempixel.com/480/280" alt="" />
 			</a>
-		</div>
+		</div> -->
 
 		<?php $ctr=0; foreach ( $results['articles'] as $article ) { if($ctr>=999) break; else $ctr++;  ?>
 
@@ -163,7 +166,7 @@
 
 			<?php if($article->content == null){ ?>
 
-				<div class="packery-item">
+				<div class="packery-item student">
 					<a href="">
 						<?php if ( $imagePath = $article->getImagePath( IMG_TYPE_THUMB ) ) { ?>
 							<img src="<?php echo $imagePath?>" alt="Article Thumbnail"/>
