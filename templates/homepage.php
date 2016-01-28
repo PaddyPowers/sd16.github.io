@@ -55,9 +55,9 @@
 		</a>
 
 		<!-- Menu bar -->
-		<!-- <div class="menu-bar clearfix">
+		<div class="menu-bar clearfix">
 
-			<ul class="menu">
+			<!-- <ul class="menu">
 				<li class="active">
 					<div>
 						<a href="#">Feed</a>
@@ -73,7 +73,7 @@
 						<a href="#">About</a>
 					</div>
 				</li>
-			</ul>
+			</ul> -->
 			<div class="icons">
 				<a href="https://twitter.com/SclDgtl">
 					<img src="images/icon-twitter.svg" alt="">
@@ -88,7 +88,7 @@
 					<img src="images/icon-youtube.svg" alt="">
 				</a>
 			</div>
-		</div> -->
+		</div>
 
 		<div class="about-short">
 			<p>Social Digital is the grouping of
