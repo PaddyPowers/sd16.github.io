@@ -4,6 +4,13 @@
 @import "functions";
 @import "better-underline";
 
+// Colours
+
+$body-text: black;
+$box-text: black;
+// $body-background: #398AB7;
+$body-background: white;
+
 // Typography
 p,
 a,
@@ -21,24 +28,50 @@ strong {
 }
 a,
 a:visited {
-  color: #000;
+  color: $body-text;
   font-weight: 400;
 }
 a.no-underline {
   text-decoration: none;
 }
 
-// Styles
+//
 body {
-  padding: 0 30px;
+  color: $body-text;
+  background: $body-background;
 }
 
 // Header
+.logo-container {
+  padding: 40px 30px 35px 30px;
+  width: 100%;
+  background: #398AB7;
+  .mask {
+    display: block;
+    text-align: justify;
+    max-width: 1000px;
+    height: 265px;
+    margin: 0 auto;
+    color: white;
+    overflow: hidden;
+    -webkit-mask: url(../images/mask.svg) center center no-repeat;
+    -webkit-mask-size: cover;
+    // background-size: contain;
+    // -webkit-mask-composite:
+    // -webkit-mask: url(../images/mask.svg) top center no-repeat;
+    p#keywords {
+      font-size: 20px;
+      a {
+        color: white;
+      }
+    }
+  }
+}
 .header {
-  padding: 70px 0 40px;
+  padding: 30px 30px;
   margin: 0 auto;
-  max-width: 1000px;
-  p {
+  max-width: 1060px;
+  .about-short p {
     max-width: 700px;
     margin-bottom: 10px;
   }
@@ -49,14 +82,13 @@ body {
     line-height: 29px;
   }
   p a {
-    @include better-underline(black);
+    // @include better-underline(black);
   }
 }
 .logo,
 .logo-narrow {
   display: block;
-  max-width: 700px;
-  margin-bottom: 20px;
+  margin-bottom: 35px;
   img {
     display: block;
   }
@@ -65,9 +97,17 @@ body {
   display: none;
 }
 .menu-bar {
-  margin-bottom: 20px;
   .icons {
     float: right;
+    a {
+      display: block;
+      margin-right: 10px;
+      img {
+        display: block;
+        width: 68px;
+        height: 68px;
+      }
+    }
   }
   .menu {
     float: left;
@@ -76,7 +116,7 @@ body {
       float: left;
       margin-right: 18px;
       &.active div {
-        border: 1px dashed black;
+        border: 1px dashed $body-text;
         padding: 0 18px;
       }
     }
@@ -114,10 +154,12 @@ body {
 }
 
 // Students
-.students {
-  max-width: 1000px;
-  padding-bottom: 40px;
+.students-outer {
+  padding: 0 30px;
+  max-width: 1060px;
   margin: 0 auto;
+}
+.students {
   .gutter-sizer {
     width: 3%;
   }
@@ -128,6 +170,7 @@ body {
     border: 1px dashed #000;
     position: relative;
     overflow: hidden;
+    color: $box-text;
     > a {
       &:hover img {
         filter:brightness(110%);

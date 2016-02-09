@@ -10,10 +10,24 @@
 }
 @media (max-width: 750px) {
   .header {
-    padding: 50px 0 40px;
+    padding: 50px 30px 40px 30px;
     .menu-bar .icons, .menu-bar .menu {
       float: none;
-      margin-top: 20px;
+    }
+    .menu-bar .menu {
+      margin-bottom: 20px;
+    }
+    .logo-container {
+      .mask {
+        height: 300px;
+        -webkit-mask: url(../images/mask-narrower.svg), url(../images/mask-top.svg), url(../images/mask-bottom.svg);
+        -webkit-mask-position: center center, top center, bottom center;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-size: contain, auto, auto;
+        #keywords {
+          // font-size: 18px;
+        }
+      }
     }
   }
   .students {
@@ -24,13 +38,31 @@
       width: 48.5%;
     }
   }
+  #keywords {
+    font-size: 12px;
+  }
+}
+// Adding another two masks to compensate for the SD16 SVG height
+@media (max-width: 620px) {
+  .logo-container {
+    .mask {
+      height: 300px;
+      -webkit-mask: url(../images/mask-narrower.svg), url(../images/mask-top.svg), url(../images/mask-bottom.svg);
+      -webkit-mask-position: center center, top center, bottom center;
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-size: contain, 132% auto, 132% auto;
+      #keywords {
+        font-size: 16px;
+      }
+    }
+  }
 }
 @media (max-width: 550px) {
-  .logo {
-    display: none;
-  }
-  .logo-narrow {
-    display: block;
+  .logo-container {
+    .mask {
+      -webkit-mask: url(../images/mask-square.svg) center center no-repeat;
+      -webkit-mask-size: contain;
+    }
   }
   .students {
     .gutter-sizer {
@@ -39,5 +71,8 @@
     .packery-item{
       width: 100%;
     }
+  }
+  #keywords {
+    font-size: 11px;
   }
 }
