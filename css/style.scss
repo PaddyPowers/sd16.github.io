@@ -8,7 +8,9 @@
 
 $body-text: black;
 $box-text: black;
-// $body-background: #398AB7;
+$header-background: white;
+$header-text: black;
+$primary: black;
 $body-background: white;
 
 // Typography
@@ -17,6 +19,7 @@ a,
 strong {
   font: 18px 'Roboto', sans-serif;
   font-weight: 300;
+  color: $body-text;
   &::selection {
     background-color: black;
     color: white;
@@ -35,7 +38,7 @@ a.no-underline {
   text-decoration: none;
 }
 
-//
+// Basics
 body {
   color: $body-text;
   background: $body-background;
@@ -44,8 +47,16 @@ body {
 // Header
 .logo-container {
   padding: 40px 30px 35px 30px;
-  width: 100%;
-  background: #398AB7;
+  margin: 0 auto;
+  max-width: 1060px;
+  background: $header-background;
+  .intro {
+    padding-bottom: 10px;
+  }
+  .outro {
+    padding-top: 10px;
+    float: right;
+  }
   .mask {
     display: block;
     text-align: justify;
@@ -56,19 +67,17 @@ body {
     overflow: hidden;
     -webkit-mask: url(../images/mask.svg) center center no-repeat;
     -webkit-mask-size: cover;
-    // background-size: contain;
-    // -webkit-mask-composite:
-    // -webkit-mask: url(../images/mask.svg) top center no-repeat;
-    p#keywords {
-      font-size: 20px;
-      a {
-        color: white;
-      }
+    p#keywords, p#keywords a {
+      font-size: 18px;
+      color: $header-text;
+      font-weight: 300;
+      @include better-underline(black);
     }
   }
 }
 .header {
-  padding: 30px 30px;
+  // padding: 30px 30px;
+  padding: 0px 30px 30px 30px;
   margin: 0 auto;
   max-width: 1060px;
   .about-short p {
@@ -101,7 +110,10 @@ body {
     float: right;
     a {
       display: block;
-      margin-right: 10px;
+      margin-left: 10px;
+      &:first-child {
+        margin-left: 0;
+      }
       img {
         display: block;
         width: 68px;
@@ -155,7 +167,7 @@ body {
 
 // Students
 .students-outer {
-  padding: 0 30px;
+  padding: 0 30px 30px 30px;
   max-width: 1060px;
   margin: 0 auto;
 }
@@ -167,7 +179,7 @@ body {
   .article,
   .photo {
     width: 22.75%;
-    border: 1px dashed #000;
+    border: 1px dashed $primary;
     position: relative;
     overflow: hidden;
     color: $box-text;
@@ -200,9 +212,11 @@ body {
     }
     .heading {
       display: block;
-      background: black;
-      color: white;
+      background: $primary;
       text-decoration: none;
+      p, h2 {
+        color: white;
+      }
     }
     .web a {
       position: relative;

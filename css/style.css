@@ -243,6 +243,7 @@ a,
 strong {
   font: 18px 'Roboto', sans-serif;
   font-weight: 300;
+  color: black;
 }
 p::-moz-selection,
 a::-moz-selection,
@@ -280,8 +281,16 @@ body {
 
 .logo-container {
   padding: 40px 30px 35px 30px;
-  width: 100%;
-  background: #398AB7;
+  margin: 0 auto;
+  max-width: 1060px;
+  background: white;
+}
+.logo-container .intro {
+  padding-bottom: 10px;
+}
+.logo-container .outro {
+  padding-top: 10px;
+  float: right;
 }
 .logo-container .mask {
   display: block;
@@ -294,15 +303,61 @@ body {
   -webkit-mask: url(../images/mask.svg) center center no-repeat;
   -webkit-mask-size: cover;
 }
-.logo-container .mask p#keywords {
-  font-size: 20px;
+.logo-container .mask p#keywords, .logo-container .mask p#keywords a {
+  font-size: 18px;
+  color: black;
+  font-weight: 300;
+  color: black;
+  text-decoration: none;
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.25) 0%, black 100%);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25) 0%, black 100%);
+  background-repeat: repeat-x;
+  background-size: 1px 1px;
+  background-position: 0 95%;
+  text-shadow: 1px 0 white, -1px 0 white;
 }
-.logo-container .mask p#keywords a {
+@media (-webkit-min-device-pixel-ratio: 1.75), (min-resolution: 168dpi) {
+  .logo-container .mask p#keywords, .logo-container .mask p#keywords a {
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.25) 0%, black 100%);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25) 0%, black 100%);
+    background-position: 0 93%;
+  }
+}
+.logo-container .mask p#keywords:hover, .logo-container .mask p#keywords a:hover {
+  text-shadow: 0 0 black;
+  background-image: -webkit-linear-gradient(top, black 0%, black 100%);
+  background-image: linear-gradient(to bottom, black 0%, black 100%);
+  background-size: 1px 1.5px;
+}
+.logo-container .mask p#keywords::-moz-selection,
+.logo-container .mask p#keywords > *::-moz-selection, .logo-container .mask p#keywords a::-moz-selection,
+.logo-container .mask p#keywords a > *::-moz-selection {
+  background-color: black;
+  background-image: linear-gradient(white 0%, white 100%);
+  text-shadow: 0 0 black;
   color: white;
+  text-shadow: none;
+}
+.logo-container .mask p#keywords::selection,
+.logo-container .mask p#keywords > *::selection, .logo-container .mask p#keywords a::selection,
+.logo-container .mask p#keywords a > *::selection {
+  background-color: black;
+  background-image: -webkit-linear-gradient(white 0%, white 100%);
+  background-image: linear-gradient(white 0%, white 100%);
+  text-shadow: 0 0 black;
+  color: white;
+  text-shadow: none;
+}
+.logo-container .mask p#keywords::-moz-selection,
+.logo-container .mask p#keywords > *::-moz-selection, .logo-container .mask p#keywords a::-moz-selection,
+.logo-container .mask p#keywords a > *::-moz-selection {
+  background-color: black;
+  color: white;
+  text-shadow: none;
 }
 
 .header {
-  padding: 30px 30px;
+  padding: 0px 30px 30px 30px;
   margin: 0 auto;
   max-width: 1060px;
 }
@@ -336,7 +391,10 @@ body {
 }
 .menu-bar .icons a {
   display: block;
-  margin-right: 10px;
+  margin-left: 10px;
+}
+.menu-bar .icons a:first-child {
+  margin-left: 0;
 }
 .menu-bar .icons a img {
   display: block;
@@ -388,7 +446,7 @@ body {
 }
 
 .students-outer {
-  padding: 0 30px;
+  padding: 0 30px 30px 30px;
   max-width: 1060px;
   margin: 0 auto;
 }
@@ -400,7 +458,7 @@ body {
 .students .article,
 .students .photo {
   width: 22.75%;
-  border: 1px dashed #000;
+  border: 1px dashed black;
   position: relative;
   overflow: hidden;
   color: black;
@@ -456,8 +514,14 @@ body {
 .students .photo .heading {
   display: block;
   background: black;
-  color: white;
   text-decoration: none;
+}
+.students .student .heading p, .students .student .heading h2,
+.students .article .heading p,
+.students .article .heading h2,
+.students .photo .heading p,
+.students .photo .heading h2 {
+  color: white;
 }
 .students .student .web a,
 .students .article .web a,
@@ -566,7 +630,7 @@ body {
     font-size: 12px;
   }
 }
-@media (max-width: 620px) {
+@media (max-width: 690px) {
   .logo-container .mask {
     height: 300px;
     -webkit-mask: url(../images/mask-narrower.svg), url(../images/mask-top.svg), url(../images/mask-bottom.svg);
@@ -583,6 +647,9 @@ body {
     -webkit-mask: url(../images/mask-square.svg) center center no-repeat;
     -webkit-mask-size: contain;
   }
+  .logo-container .mask p#keywords {
+    font-size: 10px;
+  }
 
   .students .gutter-sizer {
     width: 5%;
@@ -590,8 +657,9 @@ body {
   .students .packery-item {
     width: 100%;
   }
-
-  #keywords {
-    font-size: 11px;
+}
+@media (max-width: 375px) {
+  .logo-container .mask {
+    -webkit-mask-size: cover;
   }
 }

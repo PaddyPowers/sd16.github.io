@@ -43,7 +43,7 @@
   }
 }
 // Adding another two masks to compensate for the SD16 SVG height
-@media (max-width: 620px) {
+@media (max-width: 690px) {
   .logo-container {
     .mask {
       height: 300px;
@@ -62,7 +62,11 @@
     .mask {
       -webkit-mask: url(../images/mask-square.svg) center center no-repeat;
       -webkit-mask-size: contain;
+      p#keywords {
+        font-size: 10px;
+      }
     }
+
   }
   .students {
     .gutter-sizer {
@@ -72,7 +76,11 @@
       width: 100%;
     }
   }
-  #keywords {
-    font-size: 11px;
+}
+@media (max-width: 375px) {
+  .logo-container {
+    .mask {
+      -webkit-mask-size: cover;
+    }
   }
 }
