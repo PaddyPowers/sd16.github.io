@@ -7,6 +7,9 @@ switch ( $action ) {
   case 'archive':
     archive();
     break;
+  case 'blogs':
+    blogs();
+    break;
   default:
     homepage();
 }
@@ -27,6 +30,15 @@ function homepage() {
   $results['totalRows'] = $data['totalRows'];
   $results['pageTitle'] = "Social Digital 2016";
   require( TEMPLATE_PATH . "/homepage.php" );
+}
+
+function blogs() {
+  $results = array();
+  $data = Article::getList( HOMEPAGE_NUM_ARTICLES );
+  $results['articles'] = $data['results'];
+  $results['totalRows'] = $data['totalRows'];
+  $results['pageTitle'] = "Social Digital 2016";
+  require( TEMPLATE_PATH . "/blogs.php" );
 }
 
 ?>
